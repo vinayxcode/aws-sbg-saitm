@@ -1,351 +1,394 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AWS Student Builder Group | St. Andrews Institute of Technology & Management</title>
-  <meta name="description" content="Official website of AWS Student Builder Group (AWS SBG) at St. Andrews Institute of Technology and Management (SAITM), Gurugram. Led by Vinay Rajput.">
+  <title>AWS Student Builder Group | SAITM</title>
+  <meta name="description" content="Official website of AWS Student Builder Group at St. Andrews Institute of Technology & Management (SAITM), Gurugram. Explore cloud computing, GenAI, DevOps, and student engineering.">
+
+  <!-- Google Fonts: Space Grotesk, Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --primary: #0066FF;
-      --primary-hover: #0052CC;
-      --primary-subtle: #EBF3FF;
-      --aws-orange: #FF9900;
-      --aws-orange-hover: #EC7211;
-      --bg: #F8FAFC;
-      --surface: #FFFFFF;
-      --surface-border: #E2E8F0;
-      --text-main: #0F172A;
-      --text-muted: #64748B;
-      --card-bg: #FFFFFF;
-      --card-border: #E2E8F0;
-      --hero-bg: linear-gradient(180deg, #F1F5F9 0%, #FFFFFF 100%);
-      --cta-gradient: linear-gradient(135deg, #0052CC 0%, #0066FF 100%);
-      --footer-bg: #0047B3;
-      --footer-text: #FFFFFF;
-      --footer-muted: #CBD5E1;
-      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-      --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.1);
+      --bg: #090D16;
+      --bg-alt: #0D1322;
+      --surface: rgba(17, 24, 39, 0.75);
+      --surface-hover: rgba(26, 36, 56, 0.85);
+      --surface-border: rgba(255, 255, 255, 0.08);
+      --surface-border-hover: rgba(255, 153, 0, 0.4);
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      --aws-amber: #FF9900;
+      --aws-amber-glow: rgba(255, 153, 0, 0.25);
+      --accent-cyan: #06B6D4;
+      --accent-indigo: #6366F1;
+      --accent-gradient: linear-gradient(135deg, #FF9900 0%, #FF5E00 50%, #FF2E93 100%);
+      --hero-glow: radial-gradient(circle at 50% 0%, rgba(255, 153, 0, 0.12) 0%, rgba(99, 102, 241, 0.08) 40%, transparent 70%);
+      --card-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+      --nav-glass: rgba(13, 19, 34, 0.8);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
       --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    [data-theme="dark"] {
-      --primary: #2979FF;
-      --primary-hover: #5393FF;
-      --primary-subtle: rgba(41, 121, 255, 0.15);
-      --aws-orange: #FF9900;
-      --aws-orange-hover: #FFA726;
-      --bg: #0B0F19;
-      --surface: #111827;
-      --surface-border: #1F2937;
-      --text-main: #F9FAFB;
-      --text-muted: #94A3B8;
-      --card-bg: #131B2E;
-      --card-border: #1E293B;
-      --hero-bg: radial-gradient(circle at 50% 10%, #172554 0%, #0B0F19 80%);
-      --cta-gradient: linear-gradient(135deg, #1E3A8A 0%, #1D4ED8 100%);
-      --footer-bg: #090D16;
-      --footer-text: #F8FAFC;
-      --footer-muted: #64748B;
-      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.5);
+
+    [data-theme="light"] {
+      --bg: #F8FAFC;
+      --bg-alt: #F1F5F9;
+      --surface: rgba(255, 255, 255, 0.85);
+      --surface-hover: #FFFFFF;
+      --surface-border: #E2E8F0;
+      --surface-border-hover: rgba(255, 153, 0, 0.6);
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --text-dim: #94A3B8;
+      --aws-amber: #EA580C;
+      --aws-amber-glow: rgba(234, 88, 12, 0.2);
+      --accent-cyan: #0284C7;
+      --accent-indigo: #4F46E5;
+      --accent-gradient: linear-gradient(135deg, #EA580C 0%, #F59E0B 100%);
+      --hero-glow: radial-gradient(circle at 50% 0%, rgba(255, 153, 0, 0.1) 0%, rgba(2, 132, 199, 0.06) 40%, transparent 70%);
+      --card-gradient: #FFFFFF;
+      --nav-glass: rgba(255, 255, 255, 0.85);
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
       line-height: 1.6;
       transition: background-color 0.3s ease, color 0.3s ease;
       overflow-x: hidden;
+      position: relative;
     }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    .ambient-bg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 700px;
+      background: var(--hero-glow); pointer-events: none; z-index: 0;
+    }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    /* Floating Pill Navbar */
+    .nav-wrapper { position: sticky; top: 18px; z-index: 1000; padding: 0 16px; }
     header {
-      position: sticky; top: 0; z-index: 1000;
-      background: var(--surface);
-      border-bottom: 1px solid var(--surface-border);
-      backdrop-filter: blur(12px);
-      transition: var(--transition);
+      max-width: 980px; margin: 0 auto; background: var(--nav-glass);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--surface-border); border-radius: var(--radius-full);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); transition: var(--transition);
     }
-    .nav-inner {
-      display: flex; align-items: center; justify-content: space-between; height: 72px;
-    }
-    .brand-group {
-      display: flex; align-items: center; gap: 14px; text-decoration: none;
-    }
-    .saitm-logo-img {
-      height: 38px; width: auto; max-width: 160px; object-fit: contain;
-    }
-    .saitm-fallback-badge {
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; padding: 0 20px; }
+    .brand-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .college-logo-img { height: 28px; width: auto; object-fit: contain; }
+    .college-badge-fallback {
       display: none; align-items: center; justify-content: center;
-      width: 38px; height: 38px; border-radius: 8px;
-      background: #800000; color: #FFF; font-weight: 800; font-size: 14px;
-      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 11px; font-weight: 800; background: #7F1D1D; color: #FFF;
+      padding: 3px 7px; border-radius: 6px; letter-spacing: 0.5px;
     }
-    .brand-divider { width: 1.5px; height: 26px; background: var(--surface-border); }
-    .aws-brand { display: flex; align-items: center; gap: 8px; }
-    .aws-chip-icon { width: 30px; height: 30px; object-fit: contain; }
-    .brand-title {
-      font-weight: 800; font-size: 19px; letter-spacing: -0.5px; color: var(--text-main);
-    }
-    .desktop-nav { display: none; align-items: center; gap: 28px; list-style: none; }
-    @media (min-width: 900px) { .desktop-nav { display: flex; } }
-    .desktop-nav a {
-      text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 15px;
-      transition: var(--transition);
-    }
-    .desktop-nav a:hover { color: var(--primary); }
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
-    .theme-toggle, .menu-toggle {
+    .brand-sep { width: 1px; height: 18px; background: var(--surface-border); }
+    .aws-mark { display: flex; align-items: center; gap: 8px; }
+    .aws-chip-svg { width: 24px; height: 24px; }
+    .brand-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: var(--text-main); letter-spacing: -0.3px; }
+
+    .desktop-nav { display: none; align-items: center; gap: 24px; list-style: none; }
+    @media (min-width: 820px) { .desktop-nav { display: flex; } }
+    .desktop-nav a { text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; transition: var(--transition); }
+    .desktop-nav a:hover { color: var(--text-main); }
+
+    .nav-controls { display: flex; align-items: center; gap: 10px; }
+    .theme-btn, .mobile-toggle-btn {
       background: transparent; border: 1px solid var(--surface-border); border-radius: 50%;
-      width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; color: var(--text-main); transition: var(--transition);
+      width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: var(--text-muted); transition: var(--transition);
     }
-    .menu-toggle { border-radius: 10px; }
-    @media (min-width: 900px) { .menu-toggle { display: none; } }
-    .theme-toggle:hover, .menu-toggle:hover {
-      background: var(--primary-subtle); border-color: var(--primary); color: var(--primary);
-    }
+    .theme-btn:hover, .mobile-toggle-btn:hover { color: var(--text-main); background: var(--surface-hover); border-color: var(--text-muted); }
+    .mobile-toggle-btn { border-radius: 10px; }
+    @media (min-width: 820px) { .mobile-toggle-btn { display: none; } }
+
+    /* Mobile Drawer */
     .drawer-overlay {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 2000;
+      background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(8px); z-index: 2000;
       opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
     }
     .drawer-overlay.active { opacity: 1; pointer-events: auto; }
-    .drawer-menu {
-      position: fixed; top: 0; right: -320px; width: 300px; height: 100%;
-      background: var(--surface); z-index: 2001; padding: 32px 24px;
-      display: flex; flex-direction: column; box-shadow: var(--shadow-lg);
-      transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    .drawer {
+      position: fixed; top: 0; right: -300px; width: 280px; height: 100%;
+      background: var(--bg-alt); border-left: 1px solid var(--surface-border); z-index: 2001;
+      padding: 30px 24px; display: flex; flex-direction: column; box-shadow: -10px 0 30px rgba(0,0,0,0.4);
+      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .drawer-overlay.active .drawer-menu { right: 0; }
-    .drawer-header {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--surface-border);
+    .drawer-overlay.active .drawer { right: 0; }
+    .drawer-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--surface-border); margin-bottom: 24px; }
+    .drawer-links { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+    .drawer-links a { text-decoration: none; color: var(--text-main); font-size: 17px; font-weight: 600; transition: var(--transition); display: block; }
+    .drawer-links a:hover { color: var(--aws-amber); transform: translateX(4px); }
+    .drawer-foot { margin-top: auto; }
+
+    /* Hero Section */
+    .hero { padding: 60px 0 70px 0; text-align: center; }
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 153, 0, 0.08);
+      border: 1px solid rgba(255, 153, 0, 0.25); border-radius: var(--radius-full);
+      padding: 6px 16px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px;
+      color: var(--aws-amber); margin-bottom: 24px;
     }
-    .drawer-links { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-    .drawer-links a {
-      text-decoration: none; color: var(--text-main); font-size: 17px; font-weight: 700;
-      transition: var(--transition); display: block;
+    .status-pulse {
+      width: 7px; height: 7px; background: var(--aws-amber); border-radius: 50%;
+      box-shadow: 0 0 10px var(--aws-amber); animation: pulse 2s infinite;
     }
-    .drawer-links a:hover { color: var(--primary); transform: translateX(4px); }
-    .drawer-footer { margin-top: auto; display: flex; flex-direction: column; gap: 14px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 13px 24px; border-radius: 10px; font-weight: 700; font-size: 15px;
-      text-decoration: none; cursor: pointer; transition: var(--transition); border: none;
+    @keyframes pulse { 0% { transform: scale(0.95); opacity: 0.8; } 50% { transform: scale(1.3); opacity: 1; } 100% { transform: scale(0.95); opacity: 0.8; } }
+
+    .hero-h1 {
+      font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 6.5vw, 64px);
+      font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 16px;
     }
-    .btn-primary { background: var(--primary); color: #FFFFFF; box-shadow: 0 4px 14px rgba(0, 102, 255, 0.35); }
-    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 102, 255, 0.45); }
-    .btn-outline { background: var(--surface); color: var(--text-main); border: 1px solid var(--surface-border); }
-    .btn-outline:hover { background: var(--primary-subtle); border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
-    .btn-orange { background: var(--aws-orange); color: #111827; font-weight: 800; }
-    .btn-orange:hover { background: var(--aws-orange-hover); color: #FFFFFF; transform: translateY(-2px); }
-    .hero {
-      position: relative; background: var(--hero-bg); padding: 56px 0 64px 0;
-      text-align: center; border-bottom: 1px solid var(--surface-border); overflow: hidden;
-    }
-    .pill-badge {
-      display: inline-flex; align-items: center; gap: 8px; background: var(--primary-subtle);
-      color: var(--primary); padding: 6px 18px; border-radius: 9999px;
-      font-weight: 700; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase;
-      margin-bottom: 24px; border: 1px solid rgba(0, 102, 255, 0.15);
-    }
-    .hero-title {
-      font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 6vw, 58px);
-      font-weight: 800; line-height: 1.15; letter-spacing: -1.5px; color: var(--text-main); margin-bottom: 16px;
-    }
-    .hero-title .gradient-text {
-      color: var(--primary); background: linear-gradient(90deg, var(--primary) 0%, #00C6FF 100%);
+    .hero-gradient {
+      background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 40%, var(--aws-amber) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .hero-institution { font-size: 19px; font-weight: 700; color: var(--text-muted); margin-bottom: 24px; }
-    .hero-institution a { color: inherit; text-decoration: none; border-bottom: 1.5px dashed var(--primary); }
-    .hero-institution a:hover { color: var(--primary); }
-    .hero-desc { max-width: 680px; margin: 0 auto 36px auto; font-size: 16.5px; color: var(--text-muted); line-height: 1.7; }
-    .hero-cta-group { display: flex; flex-direction: column; gap: 12px; max-width: 520px; margin: 0 auto; }
-    @media (min-width: 640px) { .hero-cta-group { flex-direction: row; justify-content: center; flex-wrap: wrap; } }
-    section { padding: 68px 0; }
-    .section-header { text-align: center; max-width: 680px; margin: 0 auto 48px auto; }
-    .section-tag { font-size: 13px; font-weight: 800; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; }
-    .section-title { font-size: clamp(26px, 4vw, 36px); font-weight: 800; margin: 8px 0 12px 0; }
-    .section-subtitle { font-size: 16px; color: var(--text-muted); }
-    .domain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
-    .domain-card {
-      background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;
-      padding: 28px 24px; display: flex; flex-direction: column; align-items: center;
-      text-align: center; transition: var(--transition); box-shadow: var(--shadow-sm);
+    [data-theme="light"] .hero-gradient {
+      background: linear-gradient(135deg, #0F172A 0%, #334155 40%, #EA580C 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .domain-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: var(--shadow-lg); }
-    .domain-icon-wrapper {
-      width: 56px; height: 56px; border-radius: 50%; background: var(--primary-subtle);
-      color: var(--primary); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+    .hero-campus { font-size: 17px; font-weight: 500; color: var(--text-dim); margin-bottom: 20px; }
+    .hero-campus a { color: inherit; text-decoration: none; border-bottom: 1px dashed var(--text-dim); transition: var(--transition); }
+    .hero-campus a:hover { color: var(--text-main); border-color: var(--text-main); }
+    .hero-p { max-width: 660px; margin: 0 auto 36px auto; font-size: 16.5px; color: var(--text-muted); line-height: 1.7; }
+    .hero-actions { display: flex; flex-direction: column; gap: 12px; max-width: 480px; margin: 0 auto 50px auto; }
+    @media (min-width: 580px) { .hero-actions { flex-direction: row; justify-content: center; } }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 13px 24px; border-radius: var(--radius-md); font-size: 14.5px;
+      font-weight: 600; text-decoration: none; cursor: pointer; transition: var(--transition); border: 1px solid transparent;
     }
-    .domain-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
-    .domain-card p { font-size: 14.5px; color: var(--text-muted); }
-    .leader-section {
-      background: var(--hero-bg); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border);
+    .btn-glow {
+      background: var(--aws-amber); color: #0A0D14; font-weight: 700;
+      box-shadow: 0 4px 20px var(--aws-amber-glow);
     }
-    .leader-card {
-      background: var(--surface); border: 1px solid var(--card-border); border-radius: 24px;
-      padding: 40px; box-shadow: var(--shadow-md);
-      display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center;
+    .btn-glow:hover { background: #FFA726; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255, 153, 0, 0.4); }
+    .btn-glass { background: var(--surface); color: var(--text-main); border-color: var(--surface-border); backdrop-filter: blur(10px); }
+    .btn-glass:hover { background: var(--surface-hover); border-color: var(--surface-border-hover); transform: translateY(-2px); }
+
+    /* Live Stats Bar */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 760px;
+      margin: 0 auto; padding: 16px; background: var(--surface); border: 1px solid var(--surface-border);
+      border-radius: var(--radius-lg); backdrop-filter: blur(12px);
     }
-    @media (min-width: 860px) { .leader-card { grid-template-columns: 320px 1fr; } }
-    .leader-media { display: flex; flex-direction: column; align-items: center; text-align: center; }
-    .leader-avatar-frame {
-      width: 200px; height: 200px; border-radius: 50%; overflow: hidden;
-      border: 4px solid var(--primary); box-shadow: var(--shadow-md); margin-bottom: 16px; background: #E2E8F0;
+    @media (min-width: 680px) { .stats-bar { grid-template-columns: repeat(4, 1fr); } }
+    .stat-unit { display: flex; flex-direction: column; align-items: center; padding: 8px; }
+    .stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: var(--text-main); }
+    .stat-label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* Section Layouts */
+    .section-wrap { padding: 70px 0; }
+    .sec-tag {
+      display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      font-weight: 600; color: var(--aws-amber); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px;
     }
-    .leader-avatar { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-    .leader-title-badge {
-      display: inline-block; background: var(--primary-subtle); color: var(--primary);
-      padding: 4px 14px; border-radius: 9999px; font-weight: 700; font-size: 12px;
-      letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px;
+    .sec-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.8px; margin-bottom: 12px; }
+    .sec-subtitle { font-size: 15.5px; color: var(--text-muted); max-width: 580px; margin: 0 auto; }
+    .text-center { text-align: center; }
+
+    /* Bento Grid */
+    .bento-grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 40px; }
+    @media (min-width: 720px) {
+      .bento-grid { grid-template-columns: repeat(6, 1fr); }
+      .bento-col-4 { grid-column: span 4; }
+      .bento-col-2 { grid-column: span 2; }
+      .bento-col-3 { grid-column: span 3; }
     }
-    .leader-name { font-size: 24px; font-weight: 800; color: var(--text-main); }
-    .leader-inst { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
-    .leader-details { display: flex; flex-direction: column; gap: 20px; }
-    .leader-bio { font-size: 16px; color: var(--text-muted); line-height: 1.7; }
-    .leader-links-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-    .social-btn {
-      display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px;
-      border-radius: 8px; font-size: 13.5px; font-weight: 600; text-decoration: none;
-      background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-main);
-      transition: var(--transition);
+    .bento-card {
+      background: var(--surface); background-image: var(--card-gradient);
+      border: 1px solid var(--surface-border); border-radius: var(--radius-lg);
+      padding: 28px; display: flex; flex-direction: column; justify-content: space-between;
+      position: relative; overflow: hidden; transition: var(--transition);
     }
-    .social-btn:hover {
-      border-color: var(--primary); color: var(--primary); background: var(--primary-subtle);
-      transform: translateY(-2px);
+    .bento-card:hover { border-color: var(--surface-border-hover); transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+    .bento-card-top { margin-bottom: 24px; }
+    .icon-chip {
+      width: 46px; height: 46px; border-radius: 12px; background: rgba(255, 153, 0, 0.1);
+      color: var(--aws-amber); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px; border: 1px solid rgba(255, 153, 0, 0.2);
     }
-    .qr-badge-card {
-      display: flex; align-items: center; gap: 20px; background: var(--card-bg);
-      border: 1px solid var(--card-border); border-radius: 16px; padding: 18px 24px;
-      margin-top: 10px;
+    .icon-chip.cyan { background: rgba(6, 182, 212, 0.1); color: var(--accent-cyan); border-color: rgba(6, 182, 212, 0.2); }
+    .icon-chip.indigo { background: rgba(99, 102, 241, 0.1); color: var(--accent-indigo); border-color: rgba(99, 102, 241, 0.2); }
+    .bento-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
+    .bento-card p { font-size: 14.5px; color: var(--text-muted); line-height: 1.6; }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+    .pill-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 11.5px; padding: 4px 10px;
+      border-radius: var(--radius-full); background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--surface-border); color: var(--text-muted);
     }
-    .qr-img {
-      width: 80px; height: 80px; border-radius: 8px; border: 1px solid var(--card-border);
-      object-fit: contain; background: #FFF;
+
+    /* Leader Spotlight Card */
+    .lead-box {
+      background: var(--surface); background-image: var(--card-gradient);
+      border: 1px solid var(--surface-border); border-radius: var(--radius-lg);
+      padding: 36px; margin-top: 40px; display: grid; grid-template-columns: 1fr;
+      gap: 32px; align-items: center; position: relative; overflow: hidden;
     }
-    .qr-info h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-    .qr-info p { font-size: 13px; color: var(--text-muted); }
-    .formation-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 36px; box-shadow: var(--shadow-md); }
-    .formation-text { font-size: 16.5px; color: var(--text-muted); line-height: 1.7; margin-bottom: 28px; }
-    .pillars-list { display: flex; flex-direction: column; gap: 16px; list-style: none; margin-bottom: 32px; }
-    .pillar-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15.5px; font-weight: 600; }
-    .check-icon { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
-    .campus-banner {
-      background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(255, 153, 0, 0.1) 100%);
-      border: 1px solid var(--card-border); border-radius: 14px; padding: 24px; text-align: center;
+    @media (min-width: 860px) { .lead-box { grid-template-columns: 280px 1fr; } }
+    .lead-profile { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .avatar-wrapper { position: relative; width: 170px; height: 170px; margin-bottom: 18px; }
+    .avatar-ring { position: absolute; inset: -4px; border-radius: 50%; background: var(--accent-gradient); z-index: 1; opacity: 0.8; }
+    .avatar-img {
+      position: relative; width: 100%; height: 100%; border-radius: 50%;
+      object-fit: cover; object-position: top; z-index: 2; border: 4px solid var(--bg); background: #1E293B;
     }
-    .campus-banner h4 { font-size: 17px; font-weight: 800; margin-bottom: 6px; }
-    .campus-banner p { font-size: 14px; color: var(--text-muted); }
-    .community-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .community-card {
-      background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;
+    .lead-badge {
+      display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
+      padding: 3px 12px; border-radius: var(--radius-full); background: rgba(255, 153, 0, 0.12);
+      border: 1px solid rgba(255, 153, 0, 0.3); color: var(--aws-amber); font-weight: 600; margin-bottom: 6px;
+    }
+    .lead-name { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; }
+    .lead-org { font-size: 13.5px; color: var(--text-dim); }
+    .lead-narrative { display: flex; flex-direction: column; gap: 20px; }
+    .lead-narrative p { font-size: 15.5px; color: var(--text-muted); line-height: 1.7; }
+    .lead-social-dock { display: flex; flex-wrap: wrap; gap: 10px; }
+    .social-dock-btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px;
+      border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--surface-border); color: var(--text-main); font-size: 13px;
+      font-weight: 500; text-decoration: none; transition: var(--transition);
+    }
+    .social-dock-btn:hover { background: var(--surface-hover); border-color: var(--aws-amber); color: var(--aws-amber); transform: translateY(-2px); }
+    
+    .qr-dock {
+      display: flex; align-items: center; gap: 16px; padding: 16px 20px;
+      background: rgba(0, 0, 0, 0.25); border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md); margin-top: 6px;
+    }
+    .qr-thumbnail { width: 70px; height: 70px; border-radius: 8px; background: #FFFFFF; padding: 4px; object-fit: contain; flex-shrink: 0; }
+    .qr-text h4 { font-size: 14.5px; font-weight: 600; margin-bottom: 4px; color: var(--text-main); }
+    .qr-text p { font-size: 12.5px; color: var(--text-dim); line-height: 1.4; }
+
+    /* Community Channels Grid */
+    .comm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 36px; }
+    .comm-card {
+      background: var(--surface); border: 1px solid var(--surface-border); border-radius: var(--radius-md);
       padding: 24px; display: flex; flex-direction: column; justify-content: space-between;
-      transition: var(--transition);
+      transition: var(--transition); text-decoration: none; color: inherit;
     }
-    .community-card:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: var(--shadow-md); }
-    .community-icon {
-      width: 44px; height: 44px; border-radius: 10px; background: var(--primary-subtle);
-      color: var(--primary); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+    .comm-card:hover { border-color: var(--aws-amber); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .comm-icon-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .comm-icon { width: 38px; height: 38px; border-radius: 10px; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: var(--aws-amber); }
+    .comm-status-tag {
+      font-size: 11px; font-family: 'JetBrains Mono', monospace; padding: 2px 8px;
+      border-radius: var(--radius-full); background: rgba(34, 197, 94, 0.1); color: #22C55E;
+      border: 1px solid rgba(34, 197, 94, 0.25);
     }
-    .community-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-    .community-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 18px; }
+    .comm-status-tag.soon { background: rgba(255, 153, 0, 0.1); color: var(--aws-amber); border-color: rgba(255, 153, 0, 0.25); }
+    .comm-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .comm-card p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+    .comm-arrow { margin-top: 16px; font-size: 13px; font-weight: 600; color: var(--aws-amber); display: flex; align-items: center; gap: 4px; }
+
+    /* CTA Section */
     .cta-banner {
-      background: var(--cta-gradient); color: #FFF; border-radius: 24px; padding: 48px 32px;
-      text-align: center; box-shadow: 0 16px 32px rgba(0, 82, 204, 0.25);
+      background: linear-gradient(180deg, rgba(255, 153, 0, 0.08) 0%, rgba(99, 102, 241, 0.05) 100%);
+      border: 1px solid rgba(255, 153, 0, 0.25); border-radius: var(--radius-lg);
+      padding: 56px 32px; text-align: center; position: relative; overflow: hidden; margin-top: 30px;
     }
-    .cta-banner h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 4vw, 36px); font-weight: 800; margin-bottom: 14px; }
-    .cta-banner p { max-width: 580px; margin: 0 auto 30px auto; font-size: 16px; color: rgba(255, 255, 255, 0.9); }
-    .btn-cta-action { background: var(--aws-orange); color: #111827; font-weight: 800; font-size: 16px; padding: 15px 32px; border-radius: 12px; }
-    .btn-cta-action:hover { background: #FFA726; transform: translateY(-2px); }
-    footer { background: var(--footer-bg); color: var(--footer-text); padding: 56px 0 32px 0; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 36px; margin-bottom: 48px; }
+    .cta-banner h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4.5vw, 40px); font-weight: 700; margin-bottom: 14px; }
+    .cta-banner p { max-width: 540px; margin: 0 auto 28px auto; font-size: 16px; color: var(--text-muted); }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--surface-border); padding: 50px 0 30px 0; margin-top: 80px; background: var(--bg-alt); }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; margin-bottom: 40px; }
     @media (min-width: 768px) { .footer-brand { grid-column: span 2; } }
-    .footer-brand .brand-title { color: #FFF; font-size: 20px; margin-bottom: 12px; display: inline-block; }
-    .footer-brand p { color: var(--footer-muted); font-size: 14.5px; max-width: 380px; line-height: 1.6; }
-    .footer-col h4 { font-size: 14px; font-weight: 800; letter-spacing: 1px; color: var(--aws-orange); text-transform: uppercase; margin-bottom: 18px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col a { text-decoration: none; color: var(--footer-muted); font-size: 14.5px; transition: var(--transition); }
-    .footer-col a:hover { color: #FFF; padding-left: 2px; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 24px;
-      display: flex; flex-direction: column; gap: 12px; font-size: 13.5px; color: var(--footer-muted);
+    .footer-brand p { font-size: 14px; color: var(--text-dim); margin-top: 12px; max-width: 320px; }
+    .footer-col h5 {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-dim);
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px;
     }
-    @media (min-width: 640px) { .footer-bottom { flex-direction: row; justify-content: space-between; } }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col a { text-decoration: none; color: var(--text-muted); font-size: 14px; transition: var(--transition); }
+    .footer-col a:hover { color: var(--aws-amber); }
+    .footer-sub {
+      border-top: 1px solid var(--surface-border); padding-top: 24px; display: flex;
+      flex-direction: column; gap: 10px; font-size: 13px; color: var(--text-dim);
+    }
+    @media (min-width: 640px) { .footer-sub { flex-direction: row; justify-content: space-between; } }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <header>
-    <div class="container">
+  <div class="ambient-bg"></div>
+
+  <!-- Floating Pill Navbar -->
+  <div class="nav-wrapper">
+    <header>
       <div class="nav-inner">
-        <a href="#home" class="brand-group" title="AWS SBG SAITM">
-          <img src="assets/saitm_logo.png" alt="SAITM Logo" class="saitm-logo-img" onerror="this.style.display='none'; document.getElementById('saitmBadge').style.display='flex';">
-          <div id="saitmBadge" class="saitm-fallback-badge">SAITM</div>
-          <div class="brand-divider"></div>
-          <div class="aws-brand">
-            <svg class="aws-chip-icon" viewBox="0 0 24 24" fill="none">
-              <path d="M4 8H2V11H4V8Z" fill="#0066FF"/>
-              <path d="M4 13H2V16H4V13Z" fill="#0066FF"/>
-              <path d="M20 8H22V11H20V8Z" fill="#0066FF"/>
-              <path d="M20 13H22V16H20V13Z" fill="#0066FF"/>
-              <path d="M8 4V2H11V4H8Z" fill="#0066FF"/>
-              <path d="M13 4V2H16V4H13Z" fill="#0066FF"/>
-              <path d="M8 20V22H11V20H8Z" fill="#0066FF"/>
-              <path d="M13 20V22H16V20H13Z" fill="#0066FF"/>
-              <rect x="4" y="4" width="16" height="16" rx="2" stroke="#0066FF" stroke-width="2.5"/>
-              <rect x="8.5" y="8.5" width="7" height="7" rx="1" fill="#0066FF"/>
+        <!-- Brand Link -->
+        <a href="#home" class="brand-link">
+          <img src="assets/saitm_logo.png" alt="SAITM" class="college-logo-img" onerror="this.style.display='none'; document.getElementById('collegeBadge').style.display='flex';">
+          <div id="collegeBadge" class="college-badge-fallback">SAITM</div>
+          <div class="brand-sep"></div>
+          <div class="aws-mark">
+            <svg class="aws-chip-svg" viewBox="0 0 24 24" fill="none">
+              <path d="M4 8H2V11H4V8Z" fill="#FF9900"/>
+              <path d="M4 13H2V16H4V13Z" fill="#FF9900"/>
+              <path d="M20 8H22V11H20V8Z" fill="#FF9900"/>
+              <path d="M20 13H22V16H20V13Z" fill="#FF9900"/>
+              <path d="M8 4V2H11V4H8Z" fill="#FF9900"/>
+              <path d="M13 4V2H16V4H13Z" fill="#FF9900"/>
+              <path d="M8 20V22H11V20H8Z" fill="#FF9900"/>
+              <path d="M13 20V22H16V20H13Z" fill="#FF9900"/>
+              <rect x="4" y="4" width="16" height="16" rx="3" stroke="#FF9900" stroke-width="2"/>
+              <rect x="8.5" y="8.5" width="7" height="7" rx="1.5" fill="#FF9900"/>
             </svg>
-            <span class="brand-title">AWS SBG</span>
+            <span class="brand-text">AWS SBG</span>
           </div>
         </a>
+
+        <!-- Desktop Navigation Links -->
         <ul class="desktop-nav">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#domains">Domains</a></li>
-          <li><a href="#leader">Leader</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#community">Community</a></li>
+          <li><a href="#tracks">Tracks</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#channels">Community</a></li>
         </ul>
-        <div class="nav-actions">
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            <svg id="sunIcon" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+
+        <!-- Navigation Controls -->
+        <div class="nav-controls">
+          <button class="theme-btn" id="themeToggle" title="Toggle Theme" aria-label="Toggle Theme">
+            <svg id="moonIcon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg id="sunIcon" style="display:none;" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           </button>
-          <button class="menu-toggle" id="menuToggle" aria-label="Open mobile menu">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <button class="mobile-toggle-btn" id="drawerOpen" aria-label="Open Navigation Drawer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
           </button>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
 
-  <!-- Mobile Drawer -->
+  <!-- Mobile Drawer Menu -->
   <div class="drawer-overlay" id="drawerOverlay">
-    <div class="drawer-menu">
-      <div class="drawer-header">
-        <span class="brand-title">AWS SBG SAITM</span>
-        <button class="menu-toggle" id="closeDrawer" aria-label="Close menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    <div class="drawer">
+      <div class="drawer-head">
+        <span class="brand-text">AWS SBG SAITM</span>
+        <button class="mobile-toggle-btn" id="drawerClose" aria-label="Close Navigation Drawer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
       <ul class="drawer-links">
-        <li><a href="#home" class="drawer-nav-item">Home</a></li>
-        <li><a href="#domains" class="drawer-nav-item">Domains</a></li>
-        <li><a href="#leader" class="drawer-nav-item">Leadership</a></li>
-        <li><a href="#about" class="drawer-nav-item">About Club</a></li>
-        <li><a href="#community" class="drawer-nav-item">Community Hub</a></li>
-        <li><a href="https://saitm.ac.in/" target="_blank" rel="noopener" class="drawer-nav-item">SAITM Website ↗</a></li>
+        <li><a href="#home" class="drawer-item">Home</a></li>
+        <li><a href="#tracks" class="drawer-item">Learning Tracks</a></li>
+        <li><a href="#leadership" class="drawer-item">Chapter Leader</a></li>
+        <li><a href="#channels" class="drawer-item">Community Channels</a></li>
+        <li><a href="https://saitm.ac.in/" target="_blank" rel="noopener" class="drawer-item">SAITM Website ↗</a></li>
       </ul>
-      <div class="drawer-footer">
-        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-primary drawer-nav-item" style="width:100%;">Join LinkedIn Group</a>
+      <div class="drawer-foot">
+        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-glow drawer-item" style="width:100%;">Join Group ↗</a>
       </div>
     </div>
   </div>
@@ -353,336 +396,355 @@
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="container">
-      <div class="pill-badge">AWS STUDENT BUILDER GROUP SAITM</div>
-      <h1 class="hero-title">
-        BUILD THE FUTURE<br>
-        <span class="gradient-text">WITH CLOUD & AI</span>
+      <div class="status-badge">
+        <span class="status-pulse"></span>
+        <span>AWS STUDENT BUILDER GROUP • SAITM CHAPTER</span>
+      </div>
+
+      <h1 class="hero-h1">
+        Where Students<br>
+        <span class="hero-gradient">Architect the Cloud.</span>
       </h1>
-      <p class="hero-institution">
-        <a href="https://saitm.ac.in/" target="_blank" rel="noopener">St. Andrews Institute of Technology and Management</a>
+
+      <p class="hero-campus">
+        Department of Computer Science & Engineering • <a href="https://saitm.ac.in/" target="_blank" rel="noopener">St. Andrews Institute of Technology & Management</a>
       </p>
-      <p class="hero-desc">
-        St. Andrews Institute of Technology and Management's premier student community powered by AWS. We build real projects across Cloud, AI, Full Stack, DevOps and Open Source — turning students into engineers who ship.
+
+      <p class="hero-p">
+        A chill, high-impact student community turning curious minds into cloud-native builders. We get our hands dirty with real AWS infrastructure, deploy GenAI agents, and ship production software together.
       </p>
-      <div class="hero-cta-group">
-        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-primary">JOIN THE GROUP</a>
-        <a href="#leader" class="btn btn-outline">BUILDER PORTAL ↗</a>
-        <a href="#community" class="btn btn-orange">JOIN ON MEETUP</a>
+
+      <div class="hero-actions">
+        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-glow">Join the Community</a>
+        <a href="#tracks" class="btn btn-glass">Explore Tracks ↓</a>
+        <a href="#leadership" class="btn btn-glass">Meet Chapter Lead</a>
+      </div>
+
+      <!-- Live Stats Dock -->
+      <div class="stats-bar">
+        <div class="stat-unit"><span class="stat-number">100%</span><span class="stat-label">Hands-On Labs</span></div>
+        <div class="stat-unit"><span class="stat-number">6+</span><span class="stat-label">Core Domains</span></div>
+        <div class="stat-unit"><span class="stat-number">GenAI</span><span class="stat-label">AWS Bedrock</span></div>
+        <div class="stat-unit"><span class="stat-number">Global</span><span class="stat-label">AWS Ecosystem</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Core Domains Section -->
-  <section id="domains">
+  <!-- Bento Grid: Core Learning Tracks -->
+  <section class="section-wrap" id="tracks">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">WHAT WE DO</span>
-        <h2 class="section-title">Our Core Domains</h2>
-        <p class="section-subtitle">We focus purely on active building — spanning modern software engineering, AI, and cloud architectures.</p>
+      <div class="text-center">
+        <span class="sec-tag">// WHAT WE EXPLORE & SHIP</span>
+        <h2 class="sec-title">Builder Tracks & Domains</h2>
+        <p class="sec-subtitle">No boring PowerPoint slides. We dive directly into terminal commands, cloud consoles, and distributed architectures.</p>
       </div>
-      <div class="domain-grid">
-        <div class="domain-card">
-          <div class="domain-icon-wrapper">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+
+      <div class="bento-grid">
+        <!-- Bento 1: Cloud & Serverless -->
+        <div class="bento-card bento-col-4">
+          <div class="bento-card-top">
+            <div class="icon-chip">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+            </div>
+            <h3>Cloud Architecture & Serverless</h3>
+            <p>Deploy elastic infrastructure without server headaches. Learn multi-region failover, S3 data pipelines, DynamoDB schema design, and event-driven functions using AWS Lambda.</p>
           </div>
-          <h3>Cloud Computing</h3>
-          <p>Master AWS core services like EC2, S3, IAM, and Lambda through hands-on deployment and architecture labs.</p>
+          <div class="tag-cloud">
+            <span class="pill-tag">AWS Lambda</span>
+            <span class="pill-tag">Amazon S3</span>
+            <span class="pill-tag">DynamoDB</span>
+            <span class="pill-tag">EC2 & VPC</span>
+            <span class="pill-tag">IAM Security</span>
+          </div>
         </div>
-        <div class="domain-card">
-          <div class="domain-icon-wrapper">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"></path><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"></path></svg>
+
+        <!-- Bento 2: Generative AI & ML -->
+        <div class="bento-card bento-col-2">
+          <div class="bento-card-top">
+            <div class="icon-chip indigo">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Generative AI & LLMs</h3>
+            <p>Construct autonomous agents and RAG pipelines using Amazon Bedrock, SageMaker, and open-source models.</p>
           </div>
-          <h3>Artificial Intelligence</h3>
-          <p>Explore GenAI and ML tools on AWS, building intelligent applications with Amazon Bedrock, SageMaker, and LangChain.</p>
+          <div class="tag-cloud">
+            <span class="pill-tag">Amazon Bedrock</span>
+            <span class="pill-tag">SageMaker</span>
+            <span class="pill-tag">LangChain</span>
+          </div>
         </div>
-        <div class="domain-card">
-          <div class="domain-icon-wrapper">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+
+        <!-- Bento 3: DevOps & Pipelines -->
+        <div class="bento-card bento-col-3">
+          <div class="bento-card-top">
+            <div class="icon-chip cyan">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+            <h3>DevOps & Cloud Pipelines</h3>
+            <p>From local commits to cloud deployment. Master Docker containers, GitHub Actions workflows, and AWS CDK infrastructure as code.</p>
           </div>
-          <h3>DevOps & CI/CD</h3>
-          <p>Learn GitHub Actions, AWS CodePipeline, and Docker for automated cloud deployments and scalable infrastructure.</p>
+          <div class="tag-cloud">
+            <span class="pill-tag">Docker</span>
+            <span class="pill-tag">GitHub Actions</span>
+            <span class="pill-tag">AWS CodePipeline</span>
+          </div>
         </div>
-        <div class="domain-card">
-          <div class="domain-icon-wrapper">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+
+        <!-- Bento 4: Certifications & Competitions -->
+        <div class="bento-card bento-col-3">
+          <div class="bento-card-top">
+            <div class="icon-chip">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34"></path><path d="M6 4h12v7a6 6 0 0 1-12 0V4z"></path></svg>
+            </div>
+            <h3>Certifications & Hackathons</h3>
+            <p>Team up for Smart India Hackathon (SIH), study for AWS Certified Cloud Practitioner & Solutions Architect, and earn globally recognized cloud creds.</p>
           </div>
-          <h3>Full Stack Dev</h3>
-          <p>Build scalable, cloud-native web apps and serverless APIs from modern frontends to DynamoDB and PostgreSQL databases.</p>
-        </div>
-        <div class="domain-card">
-          <div class="domain-icon-wrapper">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          <div class="tag-cloud">
+            <span class="pill-tag">Solutions Architect</span>
+            <span class="pill-tag">SIH Ready</span>
+            <span class="pill-tag">AWS Educate</span>
           </div>
-          <h3>Certification Prep</h3>
-          <p>Structured study groups, exam vouchers, and practice materials for AWS Certified Cloud Practitioner & Solutions Architect exams.</p>
-        </div>
-        <div class="domain-card">
-          <div class="domain-icon-wrapper">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          </div>
-          <h3>Open Source & Hackathons</h3>
-          <p>Collaborate on real student initiatives, participate in Smart India Hackathon (SIH), and build portfolio-ready cloud projects.</p>
         </div>
       </div>
     </div>
   </section>
-  <!-- Leadership Section -->
-  <section class="leader-section" id="leader">
+
+  <!-- Leader Spotlight Section -->
+  <section class="section-wrap" id="leadership">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">LEADERSHIP</span>
-        <h2 class="section-title">Meet Our Student Builder Leader</h2>
-        <p class="section-subtitle">Driving cloud innovation, workshops, and student builders at St. Andrews Institute of Technology and Management.</p>
+      <div class="text-center">
+        <span class="sec-tag">// CHAPTER LEADERSHIP</span>
+        <h2 class="sec-title">Meet Your Builder Lead</h2>
+        <p class="sec-subtitle">Fostering a tight-knit developer culture and helping every student take their first step on AWS.</p>
       </div>
-      <div class="leader-card">
-        <div class="leader-media">
-          <div class="leader-avatar-frame">
-            <img src="assets/pfp.png" alt="Vinay Rajput" class="leader-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Vinay+Rajput&background=0066FF&color=fff&size=256';">
+
+      <div class="lead-box">
+        <div class="lead-profile">
+          <div class="avatar-wrapper">
+            <div class="avatar-ring"></div>
+            <!-- Portrait from assets/pfp.png -->
+            <img src="assets/pfp.png" alt="Vinay Rajput - AWS SBG Leader" class="avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=Vinay+Rajput&background=FF9900&color=0A0D14&size=256';">
           </div>
-          <span class="leader-title-badge">AWS SBG Leader</span>
-          <h3 class="leader-name">Vinay Rajput</h3>
-          <p class="leader-inst">B.Tech CSE • SAITM Gurugram</p>
+          <span class="lead-badge">AWS SBG LEADER</span>
+          <h3 class="lead-name">Vinay Rajput</h3>
+          <p class="lead-org">B.Tech Computer Science & Engineering<br>SAITM Gurugram</p>
         </div>
-        <div class="leader-details">
-          <p class="leader-bio">
-            Leading the AWS Student Builder Group at St. Andrews Institute of Technology and Management. Passionate about empowering students through hands-on cloud architectures, AI systems, full-stack engineering, and community-led open-source development.
+
+        <div class="lead-narrative">
+          <p>
+            "Welcome to the AWS Student Builder Group at SAITM. My goal as chapter leader is to bridge the gap between classroom theory and real cloud deployments. Whether you've never touched a cloud console or you're already deploying Docker containers, we have workshops, study circles, and projects ready for you."
           </p>
-          <div class="leader-links-grid">
-            <a href="https://www.linkedin.com/in/vinay-rajput-40aaa0376" target="_blank" rel="noopener" class="social-btn">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+
+          <!-- Social Quick Access Dock -->
+          <div class="lead-social-dock">
+            <a href="https://www.linkedin.com/in/vinay-rajput-40aaa0376" target="_blank" rel="noopener" class="social-dock-btn">
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               LinkedIn
             </a>
-            <a href="https://github.com/vinayxcode" target="_blank" rel="noopener" class="social-btn">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <a href="https://github.com/vinayxcode" target="_blank" rel="noopener" class="social-dock-btn">
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               GitHub
             </a>
-            <a href="https://www.instagram.com/vinay.sys" target="_blank" rel="noopener" class="social-btn">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <a href="https://www.instagram.com/vinay.sys" target="_blank" rel="noopener" class="social-dock-btn">
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
               Instagram
             </a>
-            <a href="https://x.com/Vinayrajput0904" target="_blank" rel="noopener" class="social-btn">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <a href="https://x.com/Vinayrajput0904" target="_blank" rel="noopener" class="social-dock-btn">
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               X (Twitter)
             </a>
+            <!-- Portfolio Placeholder Link -->
+            <a href="#portfolio" class="social-dock-btn" style="opacity:0.85; cursor:default;" title="Personal Portfolio coming soon">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              Portfolio <span style="font-size:10px; padding:2px 6px; border-radius:999px; background:rgba(255,153,0,0.15); color:var(--aws-amber); margin-left:4px;">Soon</span>
+            </a>
           </div>
-          <div class="qr-badge-card">
-            <img src="assets/qr_code.png" alt="Scan AWS Builder QR Code" class="qr-img" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.linkedin.com/in/vinay-rajput-40aaa0376';">
-            <div class="qr-info">
-              <h4>AWS Builder Profile</h4>
-              <p>Scan with your phone to view Vinay Rajput's official AWS Builder Profile & badges.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Club Formation Section -->
-  <section id="about">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">CLUB FORMATION</span>
-        <h2 class="section-title">Why We Started</h2>
-      </div>
-      <div class="formation-card">
-        <p class="formation-text">
-          The <strong>AWS Student Builder Group (formerly AWS Cloud Club)</strong> at <strong>St. Andrews Institute of Technology and Management (SAITM)</strong> was formed to establish an official, structured cloud and AI-focused student community directly aligned with the global AWS ecosystem.
-        </p>
-        <ul class="pillars-list">
-          <li class="pillar-item">
-            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Provide hands-on cloud learning beyond standard classroom theory</span>
-          </li>
-          <li class="pillar-item">
-            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Foster a collaborative, peer-driven builder culture</span>
-          </li>
-          <li class="pillar-item">
-            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Enable students to build and ship real-world production projects</span>
-          </li>
-          <li class="pillar-item">
-            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Build an active bridge connecting students with AWS leaders, faculty, and industry veterans</span>
-          </li>
-        </ul>
-        <div class="campus-banner">
-          <h4>St. Andrews Institute of Technology and Management</h4>
-          <p>Gurugram, Delhi NCR • <a href="https://saitm.ac.in/" target="_blank" rel="noopener" style="color:var(--primary); font-weight:700; text-decoration:none;">saitm.ac.in ↗</a></p>
+          <!-- QR Dock with direct builder URL -->
+          <div class="qr-dock">
+            <a href="https://builder.aws.com/community/@vinay0904" target="_blank" rel="noopener" style="text-decoration:none;">
+              <img src="assets/qr_code.png" alt="AWS Builder QR Code" class="qr-thumbnail" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://builder.aws.com/community/@vinay0904';">
+            </a>
+            <div class="qr-text">
+              <h4>AWS Builder Profile Badge</h4>
+              <p style="margin-bottom:8px;">Scan or tap to verify official AWS Builder credentials & contributions.</p>
+              <a href="https://builder.aws.com/community/@vinay0904" target="_blank" rel="noopener" style="color:var(--aws-amber); font-size:13px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
+                builder.aws.com/community/@vinay0904 ↗
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+          </section>
+          <!-- Community Channels Section -->
+  <section class="section-wrap" id="channels">
+    <div class="container">
+      <div class="text-center">
+        <span class="sec-tag">// NETWORK & SYNC</span>
+        <h2 class="sec-title">Community Channels</h2>
+        <p class="sec-subtitle">Connect with fellow student builders, get workshop invites, and participate in discussion threads.</p>
+      </div>
 
-  <!-- Community Hub Section -->
-  <section id="community">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">COMMUNITY</span>
-        <h2 class="section-title">Join Our Builder Network</h2>
-        <p class="section-subtitle">Connect with peers, participate in cloud hackathons, and attend technical hands-on workshops.</p>
-      </div>
-      <div class="community-grid">
-        <div class="community-card">
+      <div class="comm-grid">
+        <!-- LinkedIn Group -->
+        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="comm-card">
           <div>
-            <div class="community-icon">
-              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <div class="comm-icon-row">
+              <div class="comm-icon">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </div>
+              <span class="comm-status-tag">ACTIVE GROUP</span>
             </div>
-            <h3>LinkedIn SBG Group</h3>
-            <p>Official community group for updates, announcements, discussion, and project showcases.</p>
+            <h4>LinkedIn Community</h4>
+            <p>Official announcements, speaker reveals, project spotlights, and campus networking.</p>
           </div>
-          <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;">Join Group ↗</a>
-        </div>
-        <div class="community-card">
-          <div>
-            <div class="community-icon" style="background: rgba(37, 211, 102, 0.15); color: #25D366;">
-              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-            </div>
-            <h3>WhatsApp Group</h3>
-            <p>Connect in real-time with peer builders, event announcements, and study channels.</p>
-          </div>
-          <!-- Placeholder: Replace #whatsapp-group-link with your invite link -->
-          <a href="#whatsapp-group-link" class="btn btn-outline" style="width:100%;">Join WhatsApp (Coming Soon)</a>
-        </div>
-        <div class="community-card">
-          <div>
-            <div class="community-icon" style="background: rgba(255, 153, 0, 0.15); color: var(--aws-orange);">
-              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19.345 10.99c-.198-.052-.4-.08-.604-.08-1.39 0-2.52 1.13-2.52 2.52 0 .2.028.402.08.601-1.354 1.107-3.1 1.77-5.001 1.77-4.418 0-8-3.582-8-8s3.582-8 8-8c4.32 0 7.838 3.425 7.994 7.71.62-.258 1.297-.4 2.006-.4 2.76 0 5 2.24 5 5 0 2.26-1.503 4.17-3.565 4.79-.17 1.83-1.02 3.47-2.31 4.67l-2.08-1.58c.84-.78 1.4-1.85 1.5-3.05-.72.03-1.42-.14-2.02-.45z"/></svg>
-            </div>
-            <h3>Meetup Group</h3>
-            <p>RSVP for in-person workshops, speaker sessions, and hackathons hosted on campus.</p>
-          </div>
-          <!-- Placeholder: Replace #meetup-group-link with your Meetup link -->
-          <a href="#meetup-group-link" class="btn btn-orange" style="width:100%;">Join Meetup (Coming Soon)</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Community Hub Section -->
-  <section id="community">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">COMMUNITY</span>
-        <h2 class="section-title">Join Our Builder Network</h2>
-        <p class="section-subtitle">Connect with peers, participate in cloud hackathons, and attend technical hands-on workshops.</p>
-      </div>
-      <div class="community-grid">
-        <div class="community-card">
-          <div>
-            <div class="community-icon">
-              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </div>
-            <h3>LinkedIn SBG Group</h3>
-            <p>Official community group for updates, announcements, discussion, and project showcases.</p>
-          </div>
-          <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;">Join Group ↗</a>
-        </div>
-        <div class="community-card">
-          <div>
-            <div class="community-icon" style="background: rgba(37, 211, 102, 0.15); color: #25D366;">
-              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-            </div>
-            <h3>WhatsApp Group</h3>
-            <p>Connect in real-time with peer builders, event announcements, and study channels.</p>
-          </div>
-          <!-- Placeholder: Replace #whatsapp-group-link with your invite link -->
-          <a href="#whatsapp-group-link" class="btn btn-outline" style="width:100%;">Join WhatsApp (Coming Soon)</a>
-        </div>
-        <div class="community-card">
-          <div>
-            <div class="community-icon" style="background: rgba(255, 153, 0, 0.15); color: var(--aws-orange);">
-              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19.345 10.99c-.198-.052-.4-.08-.604-.08-1.39 0-2.52 1.13-2.52 2.52 0 .2.028.402.08.601-1.354 1.107-3.1 1.77-5.001 1.77-4.418 0-8-3.582-8-8s3.582-8 8-8c4.32 0 7.838 3.425 7.994 7.71.62-.258 1.297-.4 2.006-.4 2.76 0 5 2.24 5 5 0 2.26-1.503 4.17-3.565 4.79-.17 1.83-1.02 3.47-2.31 4.67l-2.08-1.58c.84-.78 1.4-1.85 1.5-3.05-.72.03-1.42-.14-2.02-.45z"/></svg>
-            </div>
-            <h3>Meetup Group</h3>
-            <p>RSVP for in-person workshops, speaker sessions, and hackathons hosted on campus.</p>
-          </div>
-          <!-- Placeholder: Replace #meetup-group-link with your Meetup link -->
-          <a href="#meetup-group-link" class="btn btn-orange" style="width:100%;">Join Meetup (Coming Soon)</a>
-        </div>
-      </div>
-    </div>
-  </section>
+          <span class="comm-arrow">Join on LinkedIn ↗</span>
+        </a>
 
-  <!-- CTA Banner -->
-  <section>
-    <div class="container">
+        <!-- WhatsApp Community Placeholder -->
+        <div class="comm-card" style="cursor: default;">
+          <div>
+            <div class="comm-icon-row">
+              <div class="comm-icon" style="color:#25D366;">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              </div>
+              <span class="comm-status-tag soon">UPDATING</span>
+            </div>
+            <h4>WhatsApp Community</h4>
+            <p>Real-time technical discussions, doubt-clearing sessions, and hackathon team matching.</p>
+          </div>
+          <a href="#whatsapp-group-link" style="color:var(--aws-amber); font-size:13px; font-weight:600; text-decoration:none; margin-top:16px; display:inline-block;">Link Coming Soon →</a>
+        </div>
+
+        <!-- Meetup Chapter Placeholder -->
+        <div class="comm-card" style="cursor: default;">
+          <div>
+            <div class="comm-icon-row">
+              <div class="comm-icon">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19.345 10.99c-.198-.052-.4-.08-.604-.08-1.39 0-2.52 1.13-2.52 2.52 0 .2.028.402.08.601-1.354 1.107-3.1 1.77-5.001 1.77-4.418 0-8-3.582-8-8s3.582-8 8-8c4.32 0 7.838 3.425 7.994 7.71.62-.258 1.297-.4 2.006-.4 2.76 0 5 2.24 5 5 0 2.26-1.503 4.17-3.565 4.79-.17 1.83-1.02 3.47-2.31 4.67l-2.08-1.58c.84-.78 1.4-1.85 1.5-3.05-.72.03-1.42-.14-2.02-.45z"/></svg>
+              </div>
+              <span class="comm-status-tag soon">UPDATING</span>
+            </div>
+            <h4>Meetup Chapter</h4>
+            <p>RSVP for in-person workshops, keynotes, and physical lab sessions on campus.</p>
+          </div>
+          <a href="#meetup-group-link" style="color:var(--aws-amber); font-size:13px; font-weight:600; text-decoration:none; margin-top:16px; display:inline-block;">Link Coming Soon →</a>
+        </div>
+
+        <!-- SAITM Portal -->
+        <a href="https://saitm.ac.in/" target="_blank" rel="noopener" class="comm-card">
+          <div>
+            <div class="comm-icon-row">
+              <div class="comm-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </div>
+              <span class="comm-status-tag">COLLEGE</span>
+            </div>
+            <h4>SAITM Official Portal</h4>
+            <p>Visit St. Andrews Institute of Technology & Management academic portal and resources.</p>
+          </div>
+          <span class="comm-arrow">saitm.ac.in ↗</span>
+        </a>
+      </div>
+
+      <!-- CTA Banner -->
       <div class="cta-banner">
-        <h2>Ready to Build With Us?</h2>
-        <p>Open to all students of St. Andrews Institute of Technology and Management. No prior AWS experience required. Gain access to hands-on workshops, cloud credits, and exclusive mentor networks.</p>
-        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-cta-action">Become a Member Today</a>
+        <h2>Ready to Ship Your First Cloud Architecture?</h2>
+        <p>Whether you're starting out with Python or architecting distributed microservices, AWS SBG SAITM gives you the tools, peer support, and cloud credits to make it real.</p>
+        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-glow">Join AWS SBG SAITM</a>
       </div>
     </div>
-  </section><!-- Footer -->
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <span class="brand-title">AWS SBG • SAITM</span>
-          <p>Turning students into cloud-native engineers, one project at a time — from St. Andrews Institute of Technology and Management, Gurugram.</p>
+          <span class="brand-text" style="font-size: 19px;">AWS SBG • SAITM</span>
+          <p>
+            An official student community cultivating next-generation cloud and AI engineers at St. Andrews Institute of Technology & Management, Gurugram.
+          </p>
         </div>
+
         <div class="footer-col">
-          <h4>NAVIGATE</h4>
+          <h5>NAVIGATION</h5>
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#domains">Domains</a></li>
-            <li><a href="#leader">Leadership</a></li>
-            <li><a href="#about">About Club</a></li>
-            <li><a href="https://saitm.ac.in/" target="_blank" rel="noopener">SAITM Portal ↗</a></li>
+            <li><a href="#tracks">Tracks</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#channels">Community</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
-          <h4>COMMUNITY</h4>
+          <h5>COMMUNITY</h5>
           <ul>
             <li><a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener">LinkedIn Group</a></li>
-            <li><a href="#community">WhatsApp Group</a></li>
-            <li><a href="#community">Meetup Group</a></li>
+            <li><a href="#channels">WhatsApp Channel</a></li>
+            <li><a href="#channels">Meetup Events</a></li>
             <li><a href="https://aws.amazon.com/developer/community/students/" target="_blank" rel="noopener">AWS Educate</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
-          <h4>CONNECT WITH LEADER</h4>
+          <h5>LEAD CONTACT</h5>
           <ul>
-            <li><a href="https://www.linkedin.com/in/vinay-rajput-40aaa0376" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://github.com/vinayxcode" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://www.instagram.com/vinay.sys" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://x.com/Vinayrajput0904" target="_blank" rel="noopener">X (Twitter)</a></li>
+            <li><a href="https://builder.aws.com/community/@vinay0904" target="_blank" rel="noopener">AWS Builder Profile ↗</a></li>
+            <li><a href="https://www.linkedin.com/in/vinay-rajput-40aaa0376" target="_blank" rel="noopener">Vinay on LinkedIn</a></li>
+            <li><a href="https://github.com/vinayxcode" target="_blank" rel="noopener">vinayxcode on GitHub</a></li>
+            <li><a href="https://www.instagram.com/vinay.sys" target="_blank" rel="noopener">@vinay.sys Instagram</a></li>
+            <li><a href="https://x.com/Vinayrajput0904" target="_blank" rel="noopener">@Vinayrajput0904 on X</a></li>
+            <li><a href="#portfolio" style="color:var(--text-dim); cursor:default;">Portfolio (Coming Soon)</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div>© 2026 AWS Student Builder Group - SAITM. All rights reserved.</div>
-        <div>Affiliated with <a href="https://saitm.ac.in/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">St. Andrews Institute of Technology and Management</a></div>
+
+      <div class="footer-sub">
+        <div>© 2026 AWS Student Builder Group • St. Andrews Institute of Technology and Management</div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="display:inline-block; width:8px; height:8px; background:#22C55E; border-radius:50%;"></span>
+          <span>SAITM Chapter Active • Gurugram, India</span>
+        </div>
       </div>
     </div>
   </footer>
+  <!-- Interactivity Script -->
   <script>
+    // Theme Switcher with localStorage persistence
     const themeToggle = document.getElementById('themeToggle');
     const moonIcon = document.getElementById('moonIcon');
     const sunIcon = document.getElementById('sunIcon');
-    function applyTheme(theme) {
-      if (theme === 'dark') {
+
+    function applyTheme(t) {
+      if (t === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        moonIcon.style.display = 'block';
+        sunIcon.style.display = 'none';
+      } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         moonIcon.style.display = 'none';
         sunIcon.style.display = 'block';
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-        moonIcon.style.display = 'block';
-        sunIcon.style.display = 'none';
       }
     }
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    applyTheme(savedTheme);
+
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(currentTheme);
+
     themeToggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
+      const active = document.documentElement.getAttribute('data-theme');
+      const next = active === 'dark' ? 'light' : 'dark';
       localStorage.setItem('theme', next);
       applyTheme(next);
     });
 
-    const menuToggle = document.getElementById('menuToggle');
-    const closeDrawer = document.getElementById('closeDrawer');
+    // Mobile Drawer Navigation
+    const drawerOpen = document.getElementById('drawerOpen');
+    const drawerClose = document.getElementById('drawerClose');
     const drawerOverlay = document.getElementById('drawerOverlay');
-    const drawerNavItems = document.querySelectorAll('.drawer-nav-item');
+    const drawerItems = document.querySelectorAll('.drawer-item');
+
     function toggleDrawer(open) {
       if (open) {
         drawerOverlay.classList.add('active');
@@ -692,15 +754,13 @@
         document.body.style.overflow = '';
       }
     }
-    menuToggle.addEventListener('click', () => toggleDrawer(true));
-    closeDrawer.addEventListener('click', () => toggleDrawer(false));
+
+    drawerOpen.addEventListener('click', () => toggleDrawer(true));
+    drawerClose.addEventListener('click', () => toggleDrawer(false));
     drawerOverlay.addEventListener('click', (e) => {
       if (e.target === drawerOverlay) toggleDrawer(false);
     });
-    drawerNavItems.forEach(item => {
-      item.addEventListener('click', () => toggleDrawer(false));
-    });
+    drawerItems.forEach(el => el.addEventListener('click', () => toggleDrawer(false)));
   </script>
 </body>
 </html>
-  

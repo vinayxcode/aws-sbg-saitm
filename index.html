@@ -255,7 +255,6 @@
       background: var(--surface-border);
       flex-shrink: 0;
     }
-
     /* AWS SBG Link (Scrolls to top of this site) */
     .aws-nav-link {
       display: flex;
@@ -333,6 +332,34 @@
       flex-shrink: 0;
     }
 
+    .nav-invite-btn {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 15px;
+      border-radius: var(--radius-full);
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 2px 10px var(--primary-glow);
+      white-space: nowrap;
+    }
+
+    @media (min-width: 640px) {
+      .nav-invite-btn {
+        display: inline-flex;
+      }
+    }
+
+    .nav-invite-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    }
+
     .theme-btn, .mobile-toggle-btn {
       background: transparent;
       border: 1px solid var(--surface-border);
@@ -406,10 +433,6 @@
       flex-direction: column;
       box-shadow: -10px 0 30px rgba(0,0,0,0.2);
       transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .drawer-overlay.active .drawer {
-      right: 0;
     }
 
     .drawer-head {
@@ -609,8 +632,7 @@
       font-size: 15.5px;
       color: var(--text-muted);
       line-height: 1.7;
-    }
-
+      }
     @media (min-width: 768px) {
       .hero-p {
         font-size: 18px;
@@ -623,7 +645,7 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      max-width: 520px;
+      max-width: 580px;
       margin: 0 auto 46px auto;
       width: 100%;
     }
@@ -881,8 +903,7 @@
       background: var(--primary-subtle);
       border: 1px solid rgba(37, 99, 235, 0.15);
       color: var(--text-muted);
-    }
-
+      }
     /* Leadership Spotlight */
     .lead-box {
       background: var(--surface);
@@ -1062,7 +1083,7 @@
       transform: translateY(-2px);
     }
 
-    /* QR Code Card */
+    /* QR Code Card with Direct Invite Link */
     .qr-dock {
       display: flex;
       flex-direction: column;
@@ -1153,7 +1174,7 @@
 
     @media (min-width: 980px) {
       .comm-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
       }
     }
 
@@ -1225,8 +1246,7 @@
       font-size: 16px;
       font-weight: 700;
       margin-bottom: 6px;
-    }
-
+      }
     @media (min-width: 768px) {
       .comm-card h4 {
         font-size: 17.5px;
@@ -1247,7 +1267,8 @@
       display: flex;
       align-items: center;
       gap: 4px;
-      }
+    }
+
     /* CTA Section */
     .cta-banner {
       background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(190, 18, 60, 0.05) 100%);
@@ -1415,13 +1436,17 @@
           <li><a href="#tracks">Tracks</a></li>
           <li><a href="#leadership">Leadership</a></li>
           <li><a href="#channels">Community</a></li>
+          <li><a href="https://www.meetup.com/aws-sbg-at-st-andrews-inst-of-technology-and-management" target="_blank" rel="noopener" style="color:var(--primary); font-weight:700;">Meetup (Main) ↗</a></li>
         </ul>
 
         <!-- Navigation Controls -->
         <div class="nav-controls">
+          <a href="https://builder.aws.com?inviteId=7f98614b-ab39-4558-a4c4-adf468084c33" target="_blank" rel="noopener" class="nav-invite-btn" title="Claim AWS Builder Invite">
+            <span>Claim Invite ↗</span>
+          </a>
           <button class="theme-btn" id="themeToggle" title="Toggle Theme" aria-label="Toggle Theme">
             <svg id="moonIcon" style="display:none;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            <svg id="sunIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg id="sunIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="12" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           </button>
           <button class="mobile-toggle-btn" id="drawerOpen" aria-label="Open Navigation Drawer">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
@@ -1445,15 +1470,17 @@
         <li><a href="#tracks" class="drawer-item">Learning Tracks</a></li>
         <li><a href="#leadership" class="drawer-item">Chapter Leader</a></li>
         <li><a href="#channels" class="drawer-item">Community Channels</a></li>
+        <li><a href="https://www.meetup.com/aws-sbg-at-st-andrews-inst-of-technology-and-management" target="_blank" rel="noopener" class="drawer-item" style="color:var(--primary); font-weight:700;">Meetup Community (Main) ↗</a></li>
         <li><a href="https://saitm.ac.in/" target="_blank" rel="noopener" class="drawer-item" style="color:var(--saitm-crimson);">Visit SAITM Website ↗</a></li>
       </ul>
-      <div class="drawer-foot">
-        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-primary drawer-item" style="width:100%;">Join Group ↗</a>
+      <div class="drawer-foot" style="display:flex; flex-direction:column; gap:10px;">
+        <a href="https://www.meetup.com/aws-sbg-at-st-andrews-inst-of-technology-and-management" target="_blank" rel="noopener" class="btn btn-primary drawer-item" style="width:100%;">Join on Meetup (Main) ↗</a>
+        <a href="https://builder.aws.com?inviteId=7f98614b-ab39-4558-a4c4-adf468084c33" target="_blank" rel="noopener" class="btn btn-glass drawer-item" style="width:100%;">Claim Builder Invite ↗</a>
+        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-glass drawer-item" style="width:100%;">LinkedIn Group ↗</a>
       </div>
     </div>
   </div>
-
-  <!-- Hero Section -->
+   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="container">
       <div class="status-badge">
@@ -1475,9 +1502,15 @@
       </p>
 
       <div class="hero-actions">
-        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-primary">Join the Community</a>
-        <a href="#tracks" class="btn btn-glass">Explore Tracks ↓</a>
-        <a href="#leadership" class="btn btn-glass">Meet Chapter Lead</a>
+        <a href="https://www.meetup.com/aws-sbg-at-st-andrews-inst-of-technology-and-management" target="_blank" rel="noopener" class="btn btn-primary" title="Join AWS SBG SAITM on Meetup (Main Community)">
+          <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24" style="margin-right:2px;"><path d="M19.345 10.99c-.198-.052-.4-.08-.604-.08-1.39 0-2.52 1.13-2.52 2.52 0 .2.028.402.08.601-1.354 1.107-3.1 1.77-5.001 1.77-4.418 0-8-3.582-8-8s3.582-8 8-8c4.32 0 7.838 3.425 7.994 7.71.62-.258 1.297-.4 2.006-.4 2.76 0 5 2.24 5 5 0 2.26-1.503 4.17-3.565 4.79-.17 1.83-1.02 3.47-2.31 4.67l-2.08-1.58c.84-.78 1.4-1.85 1.5-3.05-.72.03-1.42-.14-2.02-.45z"/></svg>
+          Join Meetup (Main Community) ↗
+        </a>
+        <a href="https://builder.aws.com?inviteId=7f98614b-ab39-4558-a4c4-adf468084c33" target="_blank" rel="noopener" class="btn btn-glass" title="Claim your official AWS Builder student invite">
+          <span style="display:inline-block; width:7px; height:7px; background:#16a34a; border-radius:50%; margin-right:4px;"></span>
+          Claim Builder Invite ↗
+        </a>
+        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-glass">LinkedIn Group ↗</a>
       </div>
 
       <!-- Live Stats Dock -->
@@ -1568,7 +1601,6 @@
       </div>
     </div>
   </section>
-
   <!-- Leader Spotlight Section -->
   <section class="section-wrap" id="leadership">
     <div class="container">
@@ -1620,17 +1652,26 @@
             </a>
           </div>
 
-          <!-- QR Dock with direct builder URL -->
+          <!-- QR Dock with personal builder invite URL -->
           <div class="qr-dock">
-            <a href="https://builder.aws.com/community/@vinay0904" target="_blank" rel="noopener" style="text-decoration:none; flex-shrink:0;">
-              <img src="assets/qr_code.png" alt="AWS Builder QR Code" class="qr-thumbnail" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://builder.aws.com/community/@vinay0904';">
+            <a href="https://builder.aws.com?inviteId=7f98614b-ab39-4558-a4c4-adf468084c33" target="_blank" rel="noopener" style="text-decoration:none; flex-shrink:0;" title="Scan or click to accept AWS Builder invite">
+              <img src="assets/qr_code.png" alt="AWS Builder Invite QR Code" class="qr-thumbnail" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fbuilder.aws.com%3FinviteId%3D7f98614b-ab39-4558-a4c4-adf468084c33';">
             </a>
             <div class="qr-text">
-              <h4>AWS Builder Profile</h4>
-              <p>Scan with your phone or tap to inspect verified badges and cloud architectures.</p>
-              <a href="https://builder.aws.com/community/@vinay0904" target="_blank" rel="noopener" class="qr-link-url">
-                builder.aws.com/community/@vinay0904 ↗
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+                <h4>Join AWS Builder (Leader Pass)</h4>
+                <span style="font-size:10px; font-family:'JetBrains Mono',monospace; padding:2px 8px; border-radius:999px; background:rgba(34,197,94,0.12); color:#16A34A; border:1px solid rgba(34,197,94,0.25); font-weight:700;">INVITE LINK ACTIVE</span>
+              </div>
+              <p>Scan with your phone or tap below to claim your official student builder account using Vinay's personal invite pass.</p>
+              <a href="https://builder.aws.com?inviteId=7f98614b-ab39-4558-a4c4-adf468084c33" target="_blank" rel="noopener" class="qr-link-url" style="font-weight:700;">
+                builder.aws.com?inviteId=7f98614b-ab39-4558... ↗
               </a>
+              <div style="margin-top:6px; font-size:12.5px;">
+                <span style="color:var(--text-dim);">Already registered? </span>
+                <a href="https://builder.aws.com/community/@vinay0904" target="_blank" rel="noopener" style="color:var(--primary); text-decoration:none; font-weight:600;">
+                  View Leader Profile (@vinay0904) ↗
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1648,6 +1689,36 @@
       </div>
 
       <div class="comm-grid">
+        <!-- Meetup Chapter (Main Community Hub) -->
+        <a href="https://www.meetup.com/aws-sbg-at-st-andrews-inst-of-technology-and-management" target="_blank" rel="noopener" class="comm-card" style="border-color:rgba(237, 28, 64, 0.4); background:linear-gradient(180deg, rgba(237, 28, 64, 0.05) 0%, var(--surface) 100%);">
+          <div>
+            <div class="comm-icon-row">
+              <div class="comm-icon" style="color:#ED1C40; background:rgba(237, 28, 64, 0.12);">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19.345 10.99c-.198-.052-.4-.08-.604-.08-1.39 0-2.52 1.13-2.52 2.52 0 .2.028.402.08.601-1.354 1.107-3.1 1.77-5.001 1.77-4.418 0-8-3.582-8-8s3.582-8 8-8c4.32 0 7.838 3.425 7.994 7.71.62-.258 1.297-.4 2.006-.4 2.76 0 5 2.24 5 5 0 2.26-1.503 4.17-3.565 4.79-.17 1.83-1.02 3.47-2.31 4.67l-2.08-1.58c.84-.78 1.4-1.85 1.5-3.05-.72.03-1.42-.14-2.02-.45z"/></svg>
+              </div>
+              <span class="comm-status-tag" style="background:rgba(237, 28, 64, 0.12); color:#ED1C40; border-color:rgba(237, 28, 64, 0.3);">MAIN COMMUNITY</span>
+            </div>
+            <h4>Meetup (Official)</h4>
+            <p>Our primary event hub. RSVP for workshops, hackathons, cloud labs, and hands-on developer meetups on campus.</p>
+          </div>
+          <span class="comm-arrow" style="color:#ED1C40;">Join Chapter on Meetup ↗</span>
+        </a>
+
+        <!-- AWS Builder Invite Card -->
+        <a href="https://builder.aws.com?inviteId=7f98614b-ab39-4558-a4c4-adf468084c33" target="_blank" rel="noopener" class="comm-card" style="border-color:rgba(37,99,235,0.35); background:linear-gradient(180deg, rgba(37,99,235,0.04) 0%, var(--surface) 100%);">
+          <div>
+            <div class="comm-icon-row">
+              <div class="comm-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 8H2V11H4V8Z" fill="currentColor"/><path d="M4 13H2V16H4V13Z" fill="currentColor"/><path d="M20 8H22V11H20V8Z" fill="currentColor"/><path d="M20 13H22V16H20V13Z" fill="currentColor"/><path d="M8 4V2H11V4H8Z" fill="currentColor"/><path d="M13 4V2H16V4H13Z" fill="currentColor"/><path d="M8 20V22H11V20H8Z" fill="currentColor"/><path d="M13 20V22H16V20H13Z" fill="currentColor"/><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><rect x="8.5" y="8.5" width="7" height="7" rx="1.5" fill="currentColor"/></svg>
+              </div>
+              <span class="comm-status-tag" style="background:rgba(37,99,235,0.12); color:var(--primary); border-color:rgba(37,99,235,0.3);">INVITE ACCESS</span>
+            </div>
+            <h4>AWS Builder Platform</h4>
+            <p>Official student registration pass. Build cloud architectures, tackle builder challenges, and earn verified AWS badges.</p>
+          </div>
+          <span class="comm-arrow">Claim Builder Invite ↗</span>
+        </a>
+
         <!-- LinkedIn Group -->
         <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="comm-card">
           <div>
@@ -1669,7 +1740,7 @@
             <div class="comm-icon-row">
               <div class="comm-icon" style="color:#25D366; background:rgba(37, 211, 102, 0.1);">
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                </div>
+              </div>
               <span class="comm-status-tag soon">UPDATING</span>
             </div>
             <h4>WhatsApp Community</h4>
@@ -1677,22 +1748,6 @@
           </div>
           <a href="#whatsapp-group-link" style="color:var(--primary); font-size:13px; font-weight:600; text-decoration:none; margin-top:16px; display:inline-block;">Link Coming Soon →</a>
         </div>
-
-        <!-- Meetup Chapter Placeholder -->
-        <div class="comm-card" style="cursor: default;">
-          <div>
-            <div class="comm-icon-row">
-              <div class="comm-icon" style="color:#ED1C40; background:rgba(237, 28, 64, 0.1);">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19.345 10.99c-.198-.052-.4-.08-.604-.08-1.39 0-2.52 1.13-2.52 2.52 0 .2.028.402.08.601-1.354 1.107-3.1 1.77-5.001 1.77-4.418 0-8-3.582-8-8s3.582-8 8-8c4.32 0 7.838 3.425 7.994 7.71.62-.258 1.297-.4 2.006-.4 2.76 0 5 2.24 5 5 0 2.26-1.503 4.17-3.565 4.79-.17 1.83-1.02 3.47-2.31 4.67l-2.08-1.58c.84-.78 1.4-1.85 1.5-3.05-.72.03-1.42-.14-2.02-.45z"/></svg>
-              </div>
-              <span class="comm-status-tag soon">UPDATING</span>
-            </div>
-            <h4>Meetup Chapter</h4>
-            <p>RSVP for in-person workshops, keynotes, and physical lab sessions on campus.</p>
-          </div>
-          <a href="#meetup-group-link" style="color:var(--primary); font-size:13px; font-weight:600; text-decoration:none; margin-top:16px; display:inline-block;">Link Coming Soon →</a>
-        </div>
-
         <!-- SAITM Portal -->
         <a href="https://saitm.ac.in/" target="_blank" rel="noopener" class="comm-card">
           <div>
@@ -1713,7 +1768,19 @@
       <div class="cta-banner">
         <h2>Ready to Ship Your First Cloud Architecture?</h2>
         <p>Whether you're starting out with Python or architecting distributed microservices, AWS SBG SAITM gives you the tools, peer support, and cloud credits to make it real.</p>
-        <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-primary">Join AWS SBG SAITM</a>
+        <div style="display:flex; flex-direction:column; gap:12px; max-width:520px; margin:0 auto; width:100%;">
+          <a href="https://www.meetup.com/aws-sbg-at-st-andrews-inst-of-technology-and-management" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:16px;">
+            Join Our Main Community on Meetup ↗
+          </a>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <a href="https://builder.aws.com?inviteId=7f98614b-ab39-4558-a4c4-adf468084c33" target="_blank" rel="noopener" class="btn btn-glass" style="flex:1; min-width:180px;">
+              Claim Builder Invite ↗
+            </a>
+            <a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener" class="btn btn-glass" style="flex:1; min-width:180px;">
+              Join LinkedIn Group ↗
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1742,9 +1809,10 @@
         <div class="footer-col">
           <h5>COMMUNITY</h5>
           <ul>
-            <li><a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener">LinkedIn Group</a></li>
+            <li><a href="https://www.meetup.com/aws-sbg-at-st-andrews-inst-of-technology-and-management" target="_blank" rel="noopener" style="color:var(--primary); font-weight:700;">Meetup (Main Community) ↗</a></li>
+            <li><a href="https://builder.aws.com?inviteId=7f98614b-ab39-4558-a4c4-adf468084c33" target="_blank" rel="noopener">Claim Builder Invite ↗</a></li>
+            <li><a href="https://www.linkedin.com/groups/40612080" target="_blank" rel="noopener">LinkedIn Group ↗</a></li>
             <li><a href="#channels">WhatsApp Channel</a></li>
-            <li><a href="#channels">Meetup Events</a></li>
             <li><a href="https://aws.amazon.com/developer/community/students/" target="_blank" rel="noopener">AWS Educate</a></li>
           </ul>
         </div>
@@ -1752,6 +1820,7 @@
         <div class="footer-col">
           <h5>LEAD CONTACT</h5>
           <ul>
+            <li><a href="https://builder.aws.com?inviteId=7f98614b-ab39-4558-a4c4-adf468084c33" target="_blank" rel="noopener" style="color:var(--primary); font-weight:600;">AWS Builder Invite ↗</a></li>
             <li><a href="https://builder.aws.com/community/@vinay0904" target="_blank" rel="noopener">AWS Builder Profile ↗</a></li>
             <li><a href="https://www.linkedin.com/in/vinay-rajput-40aaa0376" target="_blank" rel="noopener">Vinay on LinkedIn</a></li>
             <li><a href="https://github.com/vinayxcode" target="_blank" rel="noopener">vinayxcode on GitHub</a></li>
@@ -1771,7 +1840,7 @@
       </div>
     </div>
   </footer>
-  <script>
+   <script>
     // Theme Switcher with localStorage persistence (Default: Cool Light Aesthetic)
     const themeToggle = document.getElementById('themeToggle');
     const moonIcon = document.getElementById('moonIcon');
